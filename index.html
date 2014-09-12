@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pricebook</title>
+    <link href="css/style.css" rel="stylesheet"/>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>
+</head>
+<body ng-app="searchProduct" ng-controller="searchProductController">
+    <section id="mainSection">
+        
+        <header>
+            <h1>Pricebook</h1>
+        </header>
+        
+        <section id="cartContainer">
+            <a href="#" ng-click="showPriceBook()">Back to the pricebook</a>
+            <section id="cartInner">
+                <h2 id="productsInCart">Products in cart</h2>
+                <section>
+                    There is no product in your basket
+                </section>
+            </section>
+        </section>
+        
+        <section id="priceBook">
+            <section id="backToTop" ng-click="goBackToTop()">back to the top</section>
+
+            <a href="#" id="showCartButton" ng-click="showCart()"><!--<img src="img/cart.png" alt="cart" title="go to shopping cart"/>--></a>
+            <section id="searchResult">
+                <section>
+                    <!--<input ng-model="search.$" type="text" placeholder="search in all data"/><br/>-->
+                    <h2>Index of the pricebook</h2>
+                    <label for="searchNames">Search in names</label>
+                    <input ng-model="search.name" type="text" placeholder="search" id="searchNames"/>
+                </section>
+                <section>
+                    <h3>The search result is:</h3>
+                    <ul ng-repeat="p in products | filter:search:strict">
+                        <li class="hello">
+                            <a href="#" ng-click="goToProductID(p.name)" title="go to the {{p.name}">
+                                {{p.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="productTableContainer">
+                <h2>Content of the pricebook</h2>
+                <section class="products" ng-repeat="p in products">
+                    <section>
+                        <h3 id="{{p.name}}">{{p.name}}</h3>
+                        <table>
+                            <th>name</th>
+                            <th>color</th>
+                            <th>type</th>
+                            <th>price</th>
+                            <tr>
+                                <td>{{p.name}}</td>
+                                <td>{{p.color}}</td>
+                                <td>{{p.type}}</td>
+                                <td>{{p.price}}</td>
+                            </tr>
+                        </table>
+                        <section id="addToChartButton">
+                            <button ng-click="addToCart(p.id)">Add To Cart</button>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        
+    </section>
+    
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

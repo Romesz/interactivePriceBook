@@ -1,0 +1,95 @@
+{
+    "products": [
+        {
+            "id": 0,
+            "name" : "Trousers",
+            "color" : "black",
+            "type" : "clothes",
+            "price" : 20
+        },
+        {
+            "id": 1,
+            "name" : "Jeans",
+            "color" : "blue",
+            "type" : "clothes",
+            "price" : 15
+        },
+        {
+            "id": 2,
+            "name" : "Shoes",
+            "color" : "white",
+            "type" : "clothes",
+            "price" : 40
+        },
+        {
+            "id": 3,
+            "name" : "Desk",
+            "color" : "white",
+            "type" : "furniture",
+            "price" : 100
+        },
+        {
+            "id": 4,
+            "name" : "Chair",
+            "color" : "grey",
+            "type" : "furniture",
+            "price" : 80
+        },
+        {
+            "id": 5,
+            "name" : "Lamp",
+            "color" : "black",
+            "type" : "furniture",
+            "price" : 35
+        },
+        {
+            "id": 6,
+            "name" : "Pencil",
+            "color" : "black",
+            "type" : "office",
+            "price" : 2
+        },
+        {
+            "id": 7,
+            "name" : "Pen",
+            "color" : "blue",
+            "type" : "office",
+            "price" : 3
+        },
+        {
+            "id": 8,
+            "name" : "Textbook",
+            "color" : "white",
+            "type" : "office",
+            "price" : 1.5
+        },
+        {
+            "id": 9,
+            "name" : "Book",
+            "color" : "black",
+            "type" : "office",
+            "price" : 3
+        },
+        {
+            "id": 10,
+            "name" : "Monitor",
+            "color" : "black",
+            "type" : "computers",
+            "price" : 200
+        },
+        {
+            "id": 11,
+            "name" : "Laptop",
+            "color" : "black",
+            "type" : "computers",
+            "price" : 500
+        },
+        {
+            "id": 12,
+            "name" : "PC",
+            "color" : "black",
+            "type" : "computers",
+            "price" : 350
+        }
+    ]
+}

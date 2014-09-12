@@ -1,0 +1,238 @@
+/*---* Vars *---*/
+@greyColor: #515151;
+@haworthBlueColor: #00f;
+@haworthRedColor: #e51837;
+@seapraterPadding: 15px;
+
+/*---* Functions *---*/
+.border-radius(@radius: 5px) {
+    -mox-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -ms-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.rotate(@deg: 30deg) {
+    -ms-transform: rotate(@deg);
+    -webkit-transform: rotate(@deg);
+    transform: rotate(@deg);
+}
+
+.animationForClass(@name, @duration) {
+    -webkit-animation: @name @duration;
+    animation: @name @duration;
+}
+
+.keyFrames {
+    0% {.rotate(0);}
+    35% {.rotate;}
+    70% {.rotate;}
+    100% {.rotate(0);}
+}
+
+@-webkit-keyframes moveCart {
+    .keyFrames;
+}
+@keyframes moveCart {
+    .keyFrames;
+}
+
+
+/*---* Reset *---*/
+a {
+    color: @haworthBlueColor;
+    text-decoration: none;
+    
+    &:hover {
+        color: @haworthRedColor;
+    }
+}
+
+body {
+    font-family: myriad-pro, sans-serif;
+    font-size: 14px;
+    background-color: #fff;
+    color: @greyColor;
+    margin: 0;
+    padding-left: 15px;
+}
+    #mainSection {
+        height: 350px;
+        overflow: auto;
+    }
+        /*---* Header *---*/
+        h1 {
+            font-size: 1.7em;
+            font-weight: 300;
+        }
+        /*---* #cartContainer *---*/
+        #cartContainer {
+            display: none;
+        }
+        /*---* #priceBook *---*/
+        #backToTop {
+            display: none;
+            background: red;
+            position: fixed;
+            background-color: @haworthRedColor;
+            color: #fff;
+            top: 0;
+            right: 10%;
+            padding: 20px;
+            
+            
+            .border-radius;
+            
+            &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+        #showCartButton {
+            background: url('../img/cart.png') no-repeat center;
+            position: fixed;
+            right: 50px;
+            width: 140px;
+            height: 110px;
+            z-index: 99;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        .addAnimationToCart {
+            .animationForClass(moveCart, 2s);
+        }
+        #searchResult {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: @seapraterPadding;
+        }
+            #searchResult h2 {
+                margin-top: 0;
+            }
+            h2 {
+                font-size: 1.3em;
+                font-weight: 300;
+                text-decoration: underline;
+            }
+            label, input[type='text'] {
+                display: block;
+            }
+            input[type='text'] {
+                margin: 5px 0 0 0;
+                padding: 5px;
+                
+                .border-radius;
+            }
+        #productTableContainer {
+            display: inline-block;
+            margin-left: 200px;
+            width: 70%;
+        }
+            #productTableContainer h2 {
+                margin-top: @seapraterPadding;
+            }
+            .products {
+                display: inline-block;
+                margin:  auto 20px 20px auto;
+                border: 2px solid @greyColor;
+                padding: 5px;
+                width: 30%;
+                
+                .border-radius;
+            }
+                .products > section {
+                    width: 80%;
+                    margin: auto;
+                }
+            #productTableContainer table {
+                font-size: 1.2em;
+                margin: 10px 0;
+            }
+                #productTableContainer th {
+                    border-bottom: 1px solid @haworthRedColor;
+                }
+                #productTableContainer td {
+                    text-align: center;
+                    padding: 5px 10px;
+                }
+            #addToChartButton {
+                text-align: center;
+            }
+                #addToChartButton button {
+                    background-color: @haworthRedColor;
+                    color: #FFF;
+                    border-color: @haworthRedColor;
+                    padding: 10px;
+
+                    .border-radius;
+
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+
+        /*---* #priceBook *---*/
+        #cartInner .productName {
+            display: inline-block;
+            width: 120px;
+        }
+        #cartInner img {
+            vertical-align: middle;
+            padding-left: 10px;
+        }
+
+/*---* Media Queries *---*/
+@IpadLandscape: 1024px;
+@IpadPortrait: 768px;
+@AndroidNexus4Landscape: 600px;
+@AndroidNexus4Portrait: 384px;
+
+@media only screen and (max-width : @IpadLandscape) {
+    .products {
+        width: 42%;
+    }
+    #productTableContainer {
+        margin-left: 15px;
+    }
+        #productTableContainer table {
+            font-size: 1em;
+        }
+}   // tested on Ipad landscape
+
+@media only screen and (max-width : @IpadPortrait) {
+    .products {
+        width: 56%;
+    }
+    #productTableContainer {
+        margin-left: 25px;
+    }
+}   // tested on Ipad portrait
+
+@media only screen and (max-width : @AndroidNexus4Landscape) {
+    .products {
+        width: 78%;
+    }
+        .products > section {
+            width: 100%;
+        }
+}   // tested on nexus 4 landscape && tested on iphone landscape (568px)
+
+@media only screen and (max-width : @AndroidNexus4Portrait) {
+    #backToTop {
+        font-size: 0.7em;
+        padding: 10px 5px;
+    }
+    .products {
+        margin-right: 0;
+        width: 100%;
+    }
+    #productTableContainer {
+        margin-left: 0px;
+    }
+        #productTableContainer table {
+            font-size: 0.8em;
+        }
+}   // tested on nexus 4 portrait && tested on iphone portrait (320px)
